@@ -11,4 +11,3 @@ registry:
     IRROR_SOURCE_INDEX: https://index.docker.io
   volumes:
     - /data/docker-registry/data:/var/lib/registry
-    - /data/docker-registry/certs:/certs
