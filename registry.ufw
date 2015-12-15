@@ -1,0 +1,4 @@
+[registry]
+title=Docker Registry
+description=Docker Registry
+ports=5000/tcp
