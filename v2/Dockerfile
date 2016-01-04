@@ -1,4 +1,4 @@
-FROM registry:2
+FROM registry:2.2.1
 
 RUN mkdir -p /certs
 ADD domain.crt /certs/

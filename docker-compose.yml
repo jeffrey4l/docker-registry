@@ -1,5 +1,5 @@
 registry:
-  build: .
+  build: v2
   restart: always
   ports:
     - 5000:5000
@@ -10,4 +10,20 @@ registry:
     MIRROR_SOURCE: https://registry-1.docker.io
     IRROR_SOURCE_INDEX: https://index.docker.io
   volumes:
-    - /data/docker-registry/data:/var/lib/registry
+    - /data/docker-registry/v2:/var/lib/registry
+
+registryv1:
+  image: registry:0.9.1
+  restart: always
+  environment:
+    GUNICORN_OPTS: '["--preload"]'
+  ports:
+    - 5002:5000
+
+nginx:
+  build: v1
+  restart: always
+  ports:
+    - 5001:5000
+  links:
+    - registryv1
