@@ -1,5 +1,8 @@
+registry_master:
+  build: master
+
 registry:
-  build: v2
+  build: master
   restart: always
   ports:
     - 5000:5000
@@ -10,7 +13,7 @@ registry:
     MIRROR_SOURCE: https://registry-1.docker.io
     IRROR_SOURCE_INDEX: https://index.docker.io
   volumes:
-    - /data/docker-registry/v2:/var/lib/registry
+    - docker-registry:/var/lib/registry
 
 registryv1:
   image: registry:0.9.1
