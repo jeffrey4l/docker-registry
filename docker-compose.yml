@@ -1,6 +1,3 @@
-registry_master:
-  build: master
-
 registry:
   build: master
   restart: always
